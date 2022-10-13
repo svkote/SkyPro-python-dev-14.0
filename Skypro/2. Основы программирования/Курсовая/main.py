@@ -3,6 +3,8 @@ from utils import load_random_word
 
 
 def main():
+    """Основная функция программы"""
+
     # Получаем у пользователя его имя.
     player_name = input('Ввведите имя игрока:\n➡️')
 
