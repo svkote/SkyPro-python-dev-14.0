@@ -2,12 +2,14 @@ from requests import get
 from random import choice
 from basic_word import BasicWord
 
+DATA_SOURCE = 'https://www.jsonkeeper.com/b/WMNC'
+
 
 def load_random_word():
     """Получает список слов с внешнего ресурса. Выбирает случайное слово.
     Создает экземпляр класса `BasicWord` и возвращает его."""
     # получаем список слов с внешнего ресурса
-    response = get('https://www.jsonkeeper.com/b/WMNC')
+    response = get(DATA_SOURCE)
     response_json = response.json()
     # выбираем случайное слово
     choice_word = choice(response_json)
@@ -17,5 +19,3 @@ def load_random_word():
     basic_word = BasicWord(original_word, right_words)
     # возвращаем этот экземпляр.
     return basic_word
-
-
